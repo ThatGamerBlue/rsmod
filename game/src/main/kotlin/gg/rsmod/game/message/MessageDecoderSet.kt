@@ -30,6 +30,7 @@ class MessageDecoderSet {
         put(EventCameraPositionMessage::class.java, EventCameraPositionDecoder(), EventCameraPositionHandler(), structures)
         put(EventMouseIdleMessage::class.java, EventMouseIdleDecoder(), EventMouseIdleHandler(), structures)
         put(EventKeyboardMessage::class.java, EventKeyboardDecoder(), EventKeyboardHandler(), structures)
+        put(EventMouseClickedMessage::class.java, EventMouseClickedDecoder(), EventMouseClickedHandler(), structures)
 
         put(DetectModifiedClientMessage::class.java, DetectModifiedClientDecoder(), DetectModifiedClientHandler(), structures)
         put(WindowStatusMessage::class.java, WindowStatusDecoder(), WindowStatusHandler(), structures)

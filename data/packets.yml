@@ -1246,11 +1246,17 @@ in-packets:
     length: 10
     ignore: true
 
-  - message: gg.rsmod.game.message.impl.IgnoreMessage # TODO: EVENT_MOUSE_CLICK - need to refactor code to see what values are received
+  - message: gg.rsmod.game.message.impl.EventMouseClickedMessage # tickandtype is encoded by (tick << 1) + (lastButton == 2 ? 1 : 0)
     type: FIXED
     opcode: 41
     length: 6
-    ignore: true
+    structure:
+      - name: "tickandtype"
+        type: SHORT
+      - name: "x"
+        type: SHORT
+      - name: "y"
+        type: SHORT
 
   - message: gg.rsmod.game.message.impl.MapBuildCompleteMessage
     type: FIXED
